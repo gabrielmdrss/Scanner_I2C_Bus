@@ -1,6 +1,10 @@
 # I2C Bus Scanner with BMP280, MPU6500, and SSD1306 Display
 
-This project implements an I2C bus scanner that automatically detects and displays the addresses of all connected I2C devices. The system uses a BMP280 (pressure and temperature sensor), MPU6500 (accelerometer and gyroscope), and an SSD1306 display, all connected to the same I2C bus.
+This project implements an I2C Bus Device Scanner that automatically detects and displays the addresses of all connected I2C devices. In this example, was used a STM32F407 as a master and an I2C barometer sensor, an MPU6500 inertial sensor and an SSD1306 display were used as I2C slave devices. In addition to counting as another address, the display also had the function of printing all captured addresses.
+
+## Assembly
+![](images/Assembly.jfif)
+
 
 ## Features
 
@@ -22,32 +26,28 @@ This project implements an I2C bus scanner that automatically detects and displa
 - **SCK (PB6)**: Connects to the SCK pin of all I2C devices.
 - **DIP Switch (PA7)**: Used to select the I2C bus speed (Standard Mode or Fast Mode).
   
-## Setup and Installation
+## Setup
 
 1. **Hardware Setup**:
    - Connect the **BMP280**, **MPU6500**, and **SSD1306** to the I2C bus as per the wiring diagram.
    - Connect the **DIP switch** to **PA7** for frequency switching.
    - Ensure all devices are properly powered and grounded.
 
-2. **Software Setup**:
-   - Clone the repository to your local machine.
-   - Compile and upload the code to your microcontroller.
-   - Ensure that the appropriate libraries for BMP280, MPU6500, and SSD1306 are installed.
-
-3. **Running the Scanner**:
-   - After uploading the code, the microcontroller will begin scanning the I2C bus.
-   - The addresses of all connected devices will be displayed on the SSD1306 screen.
-   - The bus frequency will switch based on the DIP switch setting, and the devices will be re-scanned every 5 seconds.
-
 ## Code Explanation
+
+1. **SSD1306 Lib**
+
+   - First of all, you need to install the ssd1306 display library, which is present in this repository: https://github.com/afiskon/stm32-ssd1306?tab=readme-ov-file
+```c
+ssd1306_Fill(0); // Clear the display
+ssd1306_SetCursor(2, 30); // Set the starting position
+ssd1306_WriteString("Hello World", Font_7x10, 1); // Write the message
+ssd1306_UpdateScreen(); // Update the display
+```
 
 - **I2C Bus Scanning**: The program continuously scans for connected devices on the I2C bus and displays their addresses on the SSD1306 display.
   
 - **DIP Switch Input**: The status of the DIP switch is read from **PA7**, which determines the I2C speed. If the switch is on (1), the bus operates in **Standard Mode (100kHz)**. If the switch is off (0), it switches to **Fast Mode (400kHz)**.
 
 - **Display Output**: The SSD1306 display shows the detected I2C addresses every time the scan completes, with a 5-second interval between scans.
-
-## Example Output
-
-On the SSD1306 display, the following format will appear:
 
