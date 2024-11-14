@@ -7,47 +7,47 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         0000372c  08000188  08000188  00001188  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       000007c8  080038b4  080038b4  000048b4  2**2
+  2 .rodata       0000064c  080038b4  080038b4  000048b4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  0800407c  0800407c  00006010  2**0
+  3 .ARM.extab    00000000  08003f00  08003f00  00005010  2**0
                   CONTENTS
-  4 .ARM          00000008  0800407c  0800407c  0000507c  2**2
+  4 .ARM          00000008  08003f00  08003f00  00004f00  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08004084  08004084  00006010  2**0
+  5 .preinit_array 00000000  08003f08  08003f08  00005010  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08004084  08004084  00005084  2**2
+  6 .init_array   00000004  08003f08  08003f08  00004f08  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08004088  08004088  00005088  2**2
+  7 .fini_array   00000004  08003f0c  08003f0c  00004f0c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000010  20000000  0800408c  00006000  2**2
+  8 .data         00000010  20000000  08003f10  00005000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .ccmram       00000000  10000000  10000000  00006010  2**0
+  9 .ccmram       00000000  10000000  10000000  00005010  2**0
                   CONTENTS
- 10 .bss          000004d4  20000010  20000010  00006010  2**2
+ 10 .bss          000004d4  20000010  20000010  00005010  2**2
                   ALLOC
- 11 ._user_heap_stack 00000604  200004e4  200004e4  00006010  2**0
+ 11 ._user_heap_stack 00000604  200004e4  200004e4  00005010  2**0
                   ALLOC
- 12 .ARM.attributes 00000030  00000000  00000000  00006010  2**0
+ 12 .ARM.attributes 00000030  00000000  00000000  00005010  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0000b3ec  00000000  00000000  00006040  2**0
+ 13 .debug_info   0000b3ec  00000000  00000000  00005040  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00001a8b  00000000  00000000  0001142c  2**0
+ 14 .debug_abbrev 00001a8b  00000000  00000000  0001042c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000a20  00000000  00000000  00012eb8  2**3
+ 15 .debug_aranges 00000a20  00000000  00000000  00011eb8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 000007e2  00000000  00000000  000138d8  2**0
+ 16 .debug_rnglists 000007e2  00000000  00000000  000128d8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00020aac  00000000  00000000  000140ba  2**0
+ 17 .debug_macro  00020aac  00000000  00000000  000130ba  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000d450  00000000  00000000  00034b66  2**0
+ 18 .debug_line   0000d450  00000000  00000000  00033b66  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000c5c0d  00000000  00000000  00041fb6  2**0
+ 19 .debug_str    000c5c0d  00000000  00000000  00040fb6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  00107bc3  2**0
+ 20 .comment      00000043  00000000  00000000  00106bc3  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00002a10  00000000  00000000  00107c08  2**2
+ 21 .debug_frame  00002a10  00000000  00000000  00106c08  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000070  00000000  00000000  0010a618  2**0
+ 22 .debug_line_str 00000070  00000000  00000000  00109618  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -648,7 +648,7 @@ int main(void)
  8000670:	4619      	mov	r1, r3
  8000672:	201e      	movs	r0, #30
  8000674:	f003 f89c 	bl	80037b0 <ssd1306_SetCursor>
-			ssd1306_WriteString("FREQ 100KHZ", Font_7x10, 1); //Escreve o texto no buffer
+			ssd1306_WriteString("FREQ 100KHZ", Font_6x8, 1); //Escreve o texto no buffer
  8000678:	4b58      	ldr	r3, [pc, #352]	@ (80007dc <main+0x1bc>)
  800067a:	2201      	movs	r2, #1
  800067c:	9200      	str	r2, [sp, #0]
@@ -692,7 +692,7 @@ int main(void)
  80006be:	4619      	mov	r1, r3
  80006c0:	2002      	movs	r0, #2
  80006c2:	f003 f875 	bl	80037b0 <ssd1306_SetCursor>
-					ssd1306_WriteString("Address: ", Font_7x10, 1); //Escreve o texto no buffer
+					ssd1306_WriteString("Address: ", Font_6x8, 1); //Escreve o texto no buffer
  80006c6:	4b45      	ldr	r3, [pc, #276]	@ (80007dc <main+0x1bc>)
  80006c8:	2201      	movs	r2, #1
  80006ca:	9200      	str	r2, [sp, #0]
@@ -704,7 +704,7 @@ int main(void)
  80006d6:	4946      	ldr	r1, [pc, #280]	@ (80007f0 <main+0x1d0>)
  80006d8:	4618      	mov	r0, r3
  80006da:	f7ff ff45 	bl	8000568 <int_to_hex>
-					ssd1306_WriteString(buffer_address, Font_7x10, 1); //Escreve o texto no buffer
+					ssd1306_WriteString(buffer_address, Font_6x8, 1); //Escreve o texto no buffer
  80006de:	4b3f      	ldr	r3, [pc, #252]	@ (80007dc <main+0x1bc>)
  80006e0:	2201      	movs	r2, #1
  80006e2:	9200      	str	r2, [sp, #0]
@@ -713,10 +713,10 @@ int main(void)
  80006e8:	f003 f83c 	bl	8003764 <ssd1306_WriteString>
 					ssd1306_UpdateScreen();
  80006ec:	f002 ff2e 	bl	800354c <ssd1306_UpdateScreen>
-					y = y + 14;
+					y = y + 10;
  80006f0:	4b39      	ldr	r3, [pc, #228]	@ (80007d8 <main+0x1b8>)
  80006f2:	781b      	ldrb	r3, [r3, #0]
- 80006f4:	330e      	adds	r3, #14
+ 80006f4:	330a      	adds	r3, #10
  80006f6:	b2da      	uxtb	r2, r3
  80006f8:	4b37      	ldr	r3, [pc, #220]	@ (80007d8 <main+0x1b8>)
  80006fa:	701a      	strb	r2, [r3, #0]
@@ -741,7 +741,7 @@ int main(void)
  8000716:	4619      	mov	r1, r3
  8000718:	201e      	movs	r0, #30
  800071a:	f003 f849 	bl	80037b0 <ssd1306_SetCursor>
-			ssd1306_WriteString("FREQ 400KHZ", Font_7x10, 1); //Escreve o texto no buffer
+			ssd1306_WriteString("FREQ 400KHZ", Font_6x8, 1); //Escreve o texto no buffer
  800071e:	4b2f      	ldr	r3, [pc, #188]	@ (80007dc <main+0x1bc>)
  8000720:	2201      	movs	r2, #1
  8000722:	9200      	str	r2, [sp, #0]
@@ -785,7 +785,7 @@ int main(void)
  8000764:	4619      	mov	r1, r3
  8000766:	2002      	movs	r0, #2
  8000768:	f003 f822 	bl	80037b0 <ssd1306_SetCursor>
-					ssd1306_WriteString("Address: ", Font_7x10, 1); //Escreve o texto no buffer
+					ssd1306_WriteString("Address: ", Font_6x8, 1); //Escreve o texto no buffer
  800076c:	4b1b      	ldr	r3, [pc, #108]	@ (80007dc <main+0x1bc>)
  800076e:	2201      	movs	r2, #1
  8000770:	9200      	str	r2, [sp, #0]
@@ -797,7 +797,7 @@ int main(void)
  800077c:	491c      	ldr	r1, [pc, #112]	@ (80007f0 <main+0x1d0>)
  800077e:	4618      	mov	r0, r3
  8000780:	f7ff fef2 	bl	8000568 <int_to_hex>
-					ssd1306_WriteString(buffer_address, Font_7x10, 1); //Escreve o texto no buffer
+					ssd1306_WriteString(buffer_address, Font_6x8, 1); //Escreve o texto no buffer
  8000784:	4b15      	ldr	r3, [pc, #84]	@ (80007dc <main+0x1bc>)
  8000786:	2201      	movs	r2, #1
  8000788:	9200      	str	r2, [sp, #0]
@@ -806,10 +806,10 @@ int main(void)
  800078e:	f002 ffe9 	bl	8003764 <ssd1306_WriteString>
 					ssd1306_UpdateScreen();
  8000792:	f002 fedb 	bl	800354c <ssd1306_UpdateScreen>
-					y = y + 14;
+					y = y + 10;
  8000796:	4b10      	ldr	r3, [pc, #64]	@ (80007d8 <main+0x1b8>)
  8000798:	781b      	ldrb	r3, [r3, #0]
- 800079a:	330e      	adds	r3, #14
+ 800079a:	330a      	adds	r3, #10
  800079c:	b2da      	uxtb	r2, r3
  800079e:	4b0e      	ldr	r3, [pc, #56]	@ (80007d8 <main+0x1b8>)
  80007a0:	701a      	strb	r2, [r3, #0]
@@ -843,7 +843,7 @@ int main(void)
  80007d0:	200000d4 	.word	0x200000d4
  80007d4:	000186a0 	.word	0x000186a0
  80007d8:	20000000 	.word	0x20000000
- 80007dc:	08004070 	.word	0x08004070
+ 80007dc:	08003ef4 	.word	0x08003ef4
  80007e0:	080038c8 	.word	0x080038c8
  80007e4:	2000002c 	.word	0x2000002c
  80007e8:	200000c8 	.word	0x200000c8
@@ -1802,7 +1802,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000c84:	20000010 	.word	0x20000010
   ldr r2, =_sidata
- 8000c88:	0800408c 	.word	0x0800408c
+ 8000c88:	08003f10 	.word	0x08003f10
   ldr r2, =_sbss
  8000c8c:	20000010 	.word	0x20000010
   ldr r4, =_ebss
@@ -9000,10 +9000,10 @@ void ssd1306_SetDisplayOn(const uint8_t on) {
  8003886:	4798      	blx	r3
  8003888:	3601      	adds	r6, #1
  800388a:	e7f2      	b.n	8003872 <__libc_init_array+0x1e>
- 800388c:	08004084 	.word	0x08004084
- 8003890:	08004084 	.word	0x08004084
- 8003894:	08004084 	.word	0x08004084
- 8003898:	08004088 	.word	0x08004088
+ 800388c:	08003f08 	.word	0x08003f08
+ 8003890:	08003f08 	.word	0x08003f08
+ 8003894:	08003f08 	.word	0x08003f08
+ 8003898:	08003f0c 	.word	0x08003f0c
 
 0800389c <_init>:
  800389c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}

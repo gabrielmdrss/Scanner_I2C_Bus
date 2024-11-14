@@ -3018,19 +3018,19 @@ Discarded input sections
  .text          0x00000000        0x0 ./Drivers/ssd1306/ssd1306_fonts.o
  .data          0x00000000        0x0 ./Drivers/ssd1306/ssd1306_fonts.o
  .bss           0x00000000        0x0 ./Drivers/ssd1306/ssd1306_fonts.o
+ .rodata.Font7x10
+                0x00000000      0x76c ./Drivers/ssd1306/ssd1306_fonts.o
  .rodata.Font11x18
                 0x00000000      0xd5c ./Drivers/ssd1306/ssd1306_fonts.o
  .rodata.Font16x26
                 0x00000000     0x134c ./Drivers/ssd1306/ssd1306_fonts.o
- .rodata.Font6x8
-                0x00000000      0x5f0 ./Drivers/ssd1306/ssd1306_fonts.o
  .rodata.Font16x24
                 0x00000000     0x11d0 ./Drivers/ssd1306/ssd1306_fonts.o
  .rodata.Font16x15
                 0x00000000      0xb22 ./Drivers/ssd1306/ssd1306_fonts.o
  .rodata.char_width
                 0x00000000       0x5f ./Drivers/ssd1306/ssd1306_fonts.o
- .rodata.Font_6x8
+ .rodata.Font_7x10
                 0x00000000        0xc ./Drivers/ssd1306/ssd1306_fonts.o
  .rodata.Font_11x18
                 0x00000000        0xc ./Drivers/ssd1306/ssd1306_fonts.o
@@ -4060,7 +4060,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 .iplt           0x080038b4        0x0
  .iplt          0x080038b4        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080038b4      0x7c8
+.rodata         0x080038b4      0x64c
                 0x080038b4                        . = ALIGN (0x4)
  *(.rodata)
  .rodata        0x080038b4       0x38 ./Core/Src/main.o
@@ -4071,56 +4071,56 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .rodata.APBPrescTable
                 0x080038fc        0x8 ./Core/Src/system_stm32f4xx.o
                 0x080038fc                APBPrescTable
- .rodata.Font7x10
-                0x08003904      0x76c ./Drivers/ssd1306/ssd1306_fonts.o
- .rodata.Font_7x10
-                0x08004070        0xc ./Drivers/ssd1306/ssd1306_fonts.o
-                0x08004070                Font_7x10
-                0x0800407c                        . = ALIGN (0x4)
+ .rodata.Font6x8
+                0x08003904      0x5f0 ./Drivers/ssd1306/ssd1306_fonts.o
+ .rodata.Font_6x8
+                0x08003ef4        0xc ./Drivers/ssd1306/ssd1306_fonts.o
+                0x08003ef4                Font_6x8
+                0x08003f00                        . = ALIGN (0x4)
 
-.ARM.extab      0x0800407c        0x0
-                0x0800407c                        . = ALIGN (0x4)
+.ARM.extab      0x08003f00        0x0
+                0x08003f00                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800407c                        . = ALIGN (0x4)
+                0x08003f00                        . = ALIGN (0x4)
 
-.ARM            0x0800407c        0x8
-                0x0800407c                        . = ALIGN (0x4)
-                0x0800407c                        __exidx_start = .
+.ARM            0x08003f00        0x8
+                0x08003f00                        . = ALIGN (0x4)
+                0x08003f00                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800407c        0x8 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x08004084                        __exidx_end = .
-                0x08004084                        . = ALIGN (0x4)
+ .ARM.exidx     0x08003f00        0x8 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x08003f08                        __exidx_end = .
+                0x08003f08                        . = ALIGN (0x4)
 
-.preinit_array  0x08004084        0x0
-                0x08004084                        . = ALIGN (0x4)
-                0x08004084                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08003f08        0x0
+                0x08003f08                        . = ALIGN (0x4)
+                0x08003f08                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08004084                        PROVIDE (__preinit_array_end = .)
-                0x08004084                        . = ALIGN (0x4)
+                0x08003f08                        PROVIDE (__preinit_array_end = .)
+                0x08003f08                        . = ALIGN (0x4)
 
-.init_array     0x08004084        0x4
-                0x08004084                        . = ALIGN (0x4)
-                0x08004084                        PROVIDE (__init_array_start = .)
+.init_array     0x08003f08        0x4
+                0x08003f08                        . = ALIGN (0x4)
+                0x08003f08                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08004084        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08004088                        PROVIDE (__init_array_end = .)
-                0x08004088                        . = ALIGN (0x4)
+ .init_array    0x08003f08        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08003f0c                        PROVIDE (__init_array_end = .)
+                0x08003f0c                        . = ALIGN (0x4)
 
-.fini_array     0x08004088        0x4
-                0x08004088                        . = ALIGN (0x4)
+.fini_array     0x08003f0c        0x4
+                0x08003f0c                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08004088        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x08003f0c        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0800408c                        . = ALIGN (0x4)
-                0x0800408c                        _sidata = LOADADDR (.data)
+                0x08003f10                        . = ALIGN (0x4)
+                0x08003f10                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x0800408c        0x0
- .rel.iplt      0x0800408c        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x08003f10        0x0
+ .rel.iplt      0x08003f10        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000       0x10 load address 0x0800408c
+.data           0x20000000       0x10 load address 0x08003f10
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -4142,12 +4142,12 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x20000010                        . = ALIGN (0x4)
  *fill*         0x2000000d        0x3 
                 0x20000010                        _edata = .
-                0x0800409c                        _siccmram = LOADADDR (.ccmram)
+                0x08003f20                        _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x20000010        0x0 load address 0x0800409c
+.igot.plt       0x20000010        0x0 load address 0x08003f20
  .igot.plt      0x20000010        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x0800409c
+.ccmram         0x10000000        0x0 load address 0x08003f20
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)
@@ -4434,31 +4434,31 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x0000cc02      0x84e ./Drivers/ssd1306/ssd1306_fonts.o
 
 .debug_str      0x00000000    0xc5c0d
- .debug_str     0x00000000    0xc297e ./Core/Src/main.o
-                              0xc2cc4 (size before relaxing)
- .debug_str     0x000c297e       0x8d ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_str     0x00000000    0xc297d ./Core/Src/main.o
+                              0xc2cc3 (size before relaxing)
+ .debug_str     0x000c297d       0x8d ./Core/Src/stm32f4xx_hal_msp.o
                               0xbee51 (size before relaxing)
- .debug_str     0x000c2a0b       0xc9 ./Core/Src/stm32f4xx_it.o
+ .debug_str     0x000c2a0a       0xc9 ./Core/Src/stm32f4xx_it.o
                               0xbe620 (size before relaxing)
- .debug_str     0x000c2ad4       0xdb ./Core/Src/system_stm32f4xx.o
+ .debug_str     0x000c2ad3       0xdb ./Core/Src/system_stm32f4xx.o
                               0xbe74a (size before relaxing)
- .debug_str     0x000c2baf       0x44 ./Core/Startup/startup_stm32f407vetx.o
+ .debug_str     0x000c2bae       0x44 ./Core/Startup/startup_stm32f407vetx.o
                                  0x8c (size before relaxing)
- .debug_str     0x000c2bf3      0xafd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_str     0x000c2bf2      0xafd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                               0xbf2ce (size before relaxing)
- .debug_str     0x000c36f0      0x392 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_str     0x000c36ef      0x392 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
                               0xbf04a (size before relaxing)
- .debug_str     0x000c3a82      0x122 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_str     0x000c3a81      0x122 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
                               0xbe8c5 (size before relaxing)
- .debug_str     0x000c3ba4      0xb2f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_str     0x000c3ba3      0xb2f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
                               0xbf768 (size before relaxing)
- .debug_str     0x000c46d3      0x213 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_str     0x000c46d2      0x213 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
                               0xbeb7e (size before relaxing)
- .debug_str     0x000c48e6      0x61c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+ .debug_str     0x000c48e5      0x61c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
                               0xbf15f (size before relaxing)
- .debug_str     0x000c4f02      0xc7a ./Drivers/ssd1306/ssd1306.o
+ .debug_str     0x000c4f01      0xc7a ./Drivers/ssd1306/ssd1306.o
                               0xc2bce (size before relaxing)
- .debug_str     0x000c5b7c       0x91 ./Drivers/ssd1306/ssd1306_fonts.o
+ .debug_str     0x000c5b7b       0x92 ./Drivers/ssd1306/ssd1306_fonts.o
                               0xbebd1 (size before relaxing)
 
 .comment        0x00000000       0x43

@@ -135,7 +135,7 @@ int main(void)
 		{
 			i2c_clock_speed(100000);
 			ssd1306_SetCursor(30, y); //Posiciona o "cursor" no pixel correspondente
-			ssd1306_WriteString("FREQ 100KHZ", Font_7x10, 1); //Escreve o texto no buffer
+			ssd1306_WriteString("FREQ 100KHZ", Font_6x8, 1); //Escreve o texto no buffer
 			y = y + 20;
 
 			for (uint8_t i = 0; i < 128; i++) {
@@ -143,18 +143,18 @@ int main(void)
 
 				if (ret == HAL_OK) {
 					ssd1306_SetCursor(2, y); //Posiciona o "cursor" no pixel correspondente
-					ssd1306_WriteString("Address: ", Font_7x10, 1); //Escreve o texto no buffer
+					ssd1306_WriteString("Address: ", Font_6x8, 1); //Escreve o texto no buffer
 					int_to_hex(i, buffer_address);
-					ssd1306_WriteString(buffer_address, Font_7x10, 1); //Escreve o texto no buffer
+					ssd1306_WriteString(buffer_address, Font_6x8, 1); //Escreve o texto no buffer
 					ssd1306_UpdateScreen();
-					y = y + 14;
+					y = y + 10;
 				}
 			}
 		} else {
 
 			i2c_clock_speed(400000);
 			ssd1306_SetCursor(30, y); //Posiciona o "cursor" no pixel correspondente
-			ssd1306_WriteString("FREQ 400KHZ", Font_7x10, 1); //Escreve o texto no buffer
+			ssd1306_WriteString("FREQ 400KHZ", Font_6x8, 1); //Escreve o texto no buffer
 			y = y + 20;
 
 			for (uint8_t i = 0; i < 128; i++) {
@@ -162,11 +162,11 @@ int main(void)
 
 				if (ret == HAL_OK) {
 					ssd1306_SetCursor(2, y); //Posiciona o "cursor" no pixel correspondente
-					ssd1306_WriteString("Address: ", Font_7x10, 1); //Escreve o texto no buffer
+					ssd1306_WriteString("Address: ", Font_6x8, 1); //Escreve o texto no buffer
 					int_to_hex(i, buffer_address);
-					ssd1306_WriteString(buffer_address, Font_7x10, 1); //Escreve o texto no buffer
+					ssd1306_WriteString(buffer_address, Font_6x8, 1); //Escreve o texto no buffer
 					ssd1306_UpdateScreen();
-					y = y + 14;
+					y = y + 10;
 				}
 			}
 		}
