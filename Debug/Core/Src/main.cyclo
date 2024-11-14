@@ -2,7 +2,7 @@
 ../Core/Src/mpu6050.h:41:6:MPU6050_Read_Accel	1
 ../Core/Src/functions.h:4:6:int_to_hex	1
 ../Core/Src/functions.h:12:6:i2c_clock_speed	2
-../Core/Src/main.c:80:5:main	6
+../Core/Src/main.c:80:5:main	1
 ../Core/Src/main.c:187:6:SystemClock_Config	3
 ../Core/Src/main.c:229:13:MX_I2C1_Init	2
 ../Core/Src/main.c:263:13:MX_USART1_UART_Init	2
