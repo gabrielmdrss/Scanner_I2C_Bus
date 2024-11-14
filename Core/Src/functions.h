@@ -4,9 +4,9 @@
 void int_to_hex(uint8_t value, char *buffer) {
 	buffer[0] = '0';
 	buffer[1] = 'x';
-	buffer[2] = "0123456789ABCDEF"[(value >> 4) & 0x0F]; // Extrai o nibble mais significativo
-	buffer[3] = "0123456789ABCDEF"[value & 0x0F]; // Extrai o nibble menos significativo
-	buffer[4] = '\0'; // Finaliza a string
+	buffer[2] = "0123456789ABCDEF"[(value >> 4) & 0x0F]; // Extracts the most significant nibble
+	buffer[3] = "0123456789ABCDEF"[value & 0x0F]; // Extracts the least significant nibble
+	buffer[4] = '\0'; // Ends the string
 }
 
 void i2c_clock_speed(uint32_t clock) {
