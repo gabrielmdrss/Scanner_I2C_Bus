@@ -5,7 +5,9 @@ This project implements an I2C Bus Device Scanner that automatically detects and
 ## Assembly
 [![Assista ao vídeo no YouTube](images/Assembly.jfif)](https://youtu.be/R-K91Ljkl5E)
 
-
+<div align="center">
+    <b>Click on the image to be redirected to the video on YouTube.</b>
+</div>
 
 ## Features
 
