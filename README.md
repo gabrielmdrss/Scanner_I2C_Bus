@@ -3,7 +3,8 @@
 This project implements an I2C Bus Device Scanner that automatically detects and displays the addresses of all connected I2C devices. In this example, was used a STM32F407 as a master and an I2C barometer sensor, an MPU6500 inertial sensor and an SSD1306 display were used as I2C slave devices. In addition to counting as another address, the display also had the function of printing all captured addresses.
 
 ## Assembly
-![](images/Assembly.jfif)
+[![Assista ao vídeo no YouTube](images/Assembly.jfif)](https://youtu.be/R-K91Ljkl5E)
+
 
 
 ## Features
@@ -121,6 +122,7 @@ if(verifica)
 ```
 
 4. **Observations**:
+- Because the SSD1306 display library only works with Strings, a function would be needed that was capable of receiving an integer value and converting it to a char array capable of being printed on the display.
 ```c
 void int_to_hex(uint8_t value, char *buffer) {
 	buffer[0] = '0';
@@ -130,7 +132,7 @@ void int_to_hex(uint8_t value, char *buffer) {
 	buffer[4] = '\0'; // Ends the string
 }
 ```
-
+- Through testing, it was observed that to update the bus clock frequency value it would be necessary to restart the entire bus, for this reason, a function was created that would receive the frequency value and update the communication protocol.
 ```c
 void i2c_clock_speed(uint32_t clock) {
 
